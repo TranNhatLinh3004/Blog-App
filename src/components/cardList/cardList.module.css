@@ -1,0 +1,10 @@
+.container {
+  flex: 4;
+  padding-left: 80px;
+  /* padding-right: 80px; */
+  /* background-color: chartreuse; */
+}
+
+.title {
+  margin: 50px 0px;
+}
