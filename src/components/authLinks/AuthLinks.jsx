@@ -2,6 +2,8 @@
 import Link from "next/link";
 import styles from "./authLinks.module.css";
 import { useState } from "react";
+import UserMenu from "../usermenu/UserMenu";
+import dynamic from "next/dynamic";
 // import { signOut, useSession } from "next-auth/react";
 
 const AuthLinks = () => {
@@ -15,10 +17,11 @@ const AuthLinks = () => {
         </Link>
       ) : (
         <>
-          <Link href="/write" className={styles.link}>
-            Write
+          <UserMenu />
+          {/* <Link href="/write" className={styles.link}>
+            Viết blog
           </Link>
-          <span className={styles.link}>Logout</span>
+          <span className={styles.link}>Đăng xuất</span> */}
         </>
       )}
       <div className={styles.burger} onClick={() => setOpen(!open)}>
@@ -35,8 +38,8 @@ const AuthLinks = () => {
             <Link href="/login">Login</Link>
           ) : (
             <>
-              <Link href="/write">Write</Link>
-              <span className={styles.link}>Logout</span>
+              <Link href="/write">Viết blog</Link>
+              <span className={styles.link}>Đăng xuất</span>
             </>
           )}
         </div>
@@ -45,4 +48,4 @@ const AuthLinks = () => {
   );
 };
 
-export default AuthLinks;
+export default dynamic(() => Promise.resolve(AuthLinks), { ssr: false }); // AuthLinks;

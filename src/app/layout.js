@@ -1,10 +1,36 @@
+import dynamic from "next/dynamic";
 import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/footer/Footer";
+import ThemeProvider from "@/context/ThemeContext";
+
+import { getServerSession } from "next-auth";
+// import AuthProvider from "@/providers/AuthProvider";
+
+// Sử dụng dynamic import cho các component không cần server-side rendering
+
+import SessionProvider from "@/providers/SessionProvider";
 import { ThemeContextProvider } from "@/context/ThemeContext";
-import ThemeProvider from "@/providers/ThemeProvider";
-import ScrollUp from "@/scrollUp/ScrollUp";
+
+const Sidebar = dynamic(() => import("@/components/sidebar/Sidebar"), {
+  ssr: false,
+});
+
+const Cursor = dynamic(() => import("@/components/cursor/Cursor"), {
+  ssr: false,
+});
+
+const ScrollUp = dynamic(() => import("@/components/scrollUp/ScrollUp"), {
+  ssr: false,
+});
+
+const ScrollProgress = dynamic(
+  () => import("@/components/scrollprogress/ScrollProgress"),
+  {
+    ssr: false,
+  }
+);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,22 +39,27 @@ export const metadata = {
   description: "The best blog app!",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const session = await getServerSession();
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        {" "}
-        <ThemeContextProvider>
-          <ThemeProvider>
+        <SessionProvider session={session}>
+          <ThemeContextProvider>
+            {" "}
+            {/* <ThemeProvider> */}{" "}
             <div className="container">
-              <div className="wrapper">
-                <Navbar />
-                {children}
-                <Footer />
-              </div>
-            </div>
-          </ThemeProvider>
-        </ThemeContextProvider>
+              <Cursor />
+              <Navbar />
+              <ScrollProgress />
+              <Sidebar />
+              <div className="wrapper"> {children} </div> <Footer />
+              <ScrollUp />
+            </div>{" "}
+            {/* </ThemeProvider> */}{" "}
+          </ThemeContextProvider>{" "}
+        </SessionProvider>{" "}
       </body>{" "}
     </html>
   );

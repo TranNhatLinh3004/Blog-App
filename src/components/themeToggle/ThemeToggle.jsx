@@ -4,9 +4,9 @@ import Image from "next/image";
 import React, { useContext } from "react";
 import styles from "./themeToggle.module.css";
 import { ThemeContext } from "@/context/ThemeContext";
-
+import dynamic from "next/dynamic";
 function ThemeToggle(props) {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useContext(ThemeContext);
 
   return (
     <div className={styles.container}>
@@ -31,4 +31,4 @@ function ThemeToggle(props) {
   );
 }
 
-export default ThemeToggle;
+export default dynamic(() => Promise.resolve(ThemeToggle), { ssr: false }); // ThemeToggle;

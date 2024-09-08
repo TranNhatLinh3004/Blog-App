@@ -5,7 +5,7 @@ import Featured from "@/components/featured/Featured";
 import CategoryList from "@/components/categoryList/CategoryList";
 import Menu from "@/components/menu/Menu";
 import CardList from "@/components/cardList/CardList";
-import ScrollUp from "@/scrollUp/ScrollUp";
+import ScrollUp from "@/components/scrollUp/ScrollUp";
 
 export default function Home() {
   return (
@@ -17,8 +17,6 @@ export default function Home() {
         <Menu />
         <CardList />
       </div>
-
-      {/* <ScrollUp /> */}
     </div>
   );
 }

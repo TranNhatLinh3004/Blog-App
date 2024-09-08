@@ -1,0 +1,30 @@
+.scrollup {
+  position: fixed;
+  right: 1.5rem;
+  background-color: #109d52;
+  opacity: 0.6;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  z-index: 200;
+  transition: 0.4s;
+  display: none;
+  cursor: pointer;
+}
+
+.showScroll {
+  display: block;
+  /* Các styles khác để hiển thị nút */
+}
+
+/* .scrollup__icon {
+  font-size: 1.5rem;
+  color: var(--title-color);
+} */
+
+.scrollup:hover {
+  background-color: #109d52;
+}
+
+/* .show-scroll {
+  bottom: 3rem;
+} */

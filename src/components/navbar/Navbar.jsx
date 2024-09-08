@@ -7,6 +7,7 @@ import AuthLinks from "../authLinks/AuthLinks";
 
 function Navbar(props) {
   return (
+    
     <div className={styles.container}>
       <div className={styles.social}>
         <Image
@@ -27,7 +28,7 @@ function Navbar(props) {
       <div className={styles.logo}>Anh Dev</div>
       <div className={styles.links}>
         <ThemeToggle />
-        <Link href="/" className={styles.link}>
+        {/* <Link href="/" className={styles.link}>
           Homepage
         </Link>
         <Link href="/" className={styles.link}>
@@ -35,7 +36,7 @@ function Navbar(props) {
         </Link>
         <Link href="/" className={styles.link}>
           About
-        </Link>
+        </Link> */}
         {/* <Link href="/">Home</Link> */}
         <AuthLinks />
       </div>

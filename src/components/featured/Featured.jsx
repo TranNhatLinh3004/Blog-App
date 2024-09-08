@@ -27,7 +27,9 @@ const Featured = () => {
             laudantium repellat ducimus unde aspernatur fuga. Quo, accusantium
             quisquam! Harum unde sit culpa debitis.
           </p>
-          <button className={styles.button}>Read More</button>
+          <button className={styles.button}>
+            <span className={styles.buttonContent}>Read more </span>
+          </button>
         </div>
       </div>
     </div>

@@ -5,23 +5,22 @@ import { createContext, useEffect, useState } from "react";
 export const ThemeContext = createContext();
 
 const getFromLocalStorage = () => {
-  const value = localStorage.getItem("theme");
-  return value; // Ensure it always returns a valid theme
+  if (typeof window === "undefined") {
+    const value = localStorage.getItem("themeBlog");
+    return value ?? "light";
+  }
 };
-
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState(getFromLocalStorage);
-
-  useEffect(() => {
-    console.log("Current theme:", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
+  const [theme, setTheme] = useState(() => {
+    return getFromLocalStorage();
+  });
   const toggleTheme = () => {
-    console.log(theme);
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
+  useEffect(() => {
+    localStorage.setItem("themeBlog", theme);
+  }, [theme]);
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}

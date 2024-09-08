@@ -1,0 +1,85 @@
+.sidebar {
+  width: 200px;
+  /* background-color: rgb(31, 33, 44); */
+  background-color: transparent;
+  /* height: 100vh; */
+  padding: 100px 20px 0px 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 10px;
+  /* position: fixed; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logoIcon {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.logoText {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--textColor);
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav li {
+  margin-bottom: 15px;
+  width: 80%;
+  /* background-color: aqua; */
+  margin-left: 50%;
+  padding: 5px 0;
+  transform: translateX(-50%);
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  color: var(--textColor);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar nav a span {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.sidebar nav li.active a {
+  color: rgba(99, 88, 238, 1);
+  font-weight: bold;
+}
+
+.sidebar nav li a:hover {
+  font-weight: bold;
+}
+
+/* Giả lập icons - bạn có thể thay thế bằng icon thực tế */
+
+.iconHome::before {
+  content: "🏠";
+}
+
+.iconRoadmap::before {
+  content: "🗺️";
+}
+
+.iconArticles::before {
+  content: "📄";
+}

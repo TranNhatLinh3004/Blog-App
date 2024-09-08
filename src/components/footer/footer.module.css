@@ -1,10 +1,12 @@
 .container {
-  margin-top: 50px;
   padding: 20px 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: var(--softTextColor);
+  z-index: 100;
+  /* position: absolute; */
+  background-color: var(--bg);
 }
 
 .info {

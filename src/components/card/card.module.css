@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   gap: 50px;
-  
 }
 
 .imageContainer {
@@ -40,9 +39,29 @@
 }
 
 .link {
-  border-bottom: 1px solid crimson;
+  position: relative;
   width: max-content;
-  padding: 2px 0px;
+  padding: 10px 0;
+  text-decoration: none;
+  /* Remove default underline */
+  color: var(--textColor);
+  font-size: 18px;
+  /* Add text color if needed */
+}
+
+.linkIcon {
+  /* display: inline-block; */
+  width: 30%;
+  height: 2px;
+  background-color: crimson;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.link:hover .linkIcon {
+  width: 100%;
 }
 
 @media screen and (max-width: 1280px) {

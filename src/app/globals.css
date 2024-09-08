@@ -3,6 +3,7 @@
   --textColor: black;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
+  --main-color: chartreuse;
 }
 
 * {
@@ -22,7 +23,7 @@ a {
 }
 
 .dark {
-  --bg: #0f172a;
+  --bg: rgb(25, 27, 39);
   --textColor: #ddd;
   --softBg: #1f273a;
   --softTextColor: #a6a6a6;
@@ -36,18 +37,22 @@ a {
 }
 
 .container {
+  position: relative;
   min-height: 100vh;
-  width: 100%;
   background-color: var(--bg);
   color: var(--textColor);
+  width: 100%;
+  background: var(--bg);
 }
 
 .wrapper {
-  width: 100%;
+  /* float: left; */
   /* background: green; */
   /* max-width: 1536px; */
   margin-left: auto;
   margin-right: auto;
+  padding-left: calc(170px);
+  background: var(--bg);
   /* padding-left: 80px;
   padding-right: 80px; */
 }

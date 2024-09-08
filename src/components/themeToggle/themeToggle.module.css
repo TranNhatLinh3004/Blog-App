@@ -11,8 +11,8 @@
 }
 
 .ball {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   position: absolute;
 }
@@ -24,10 +24,10 @@
   position: relative;
   /* display: inline-block; */
   /* background-color: chartreuse; */
-  width: 58px;
+  width: 55px;
   display: flex;
   align-items: center;
-  height: 27.5px;
+  height: 24px;
 }
 
 .switch input {
@@ -51,8 +51,8 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   border-radius: 20px;
   left: 2px;
   bottom: 2px;
@@ -66,8 +66,8 @@
   top: 6px;
   left: 36px;
   z-index: 1;
-  width: 17px;
-  height: 16px;
+  width: 15px;
+  height: 13px;
 }
 
 .moon svg {
@@ -76,8 +76,8 @@
   top: 5px;
   left: 5px;
   z-index: 1;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 /* .switch:hover */
